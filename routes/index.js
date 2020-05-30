@@ -1,15 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var postCtrl = require('../controllers/posts');
 
-router.get('/', function(req, res, next) {
-  res.render('index', { 
-    user:req.user,
-    name:req.query.name
-  });
-});
+router.get('/', postCtrl.index);
 
-router.get('/auth/google', passport.authenticate(
+router.get('/auth/google', passport.authenticate( 
   'google',
   {scope: ['profile', 'email']}
 ));

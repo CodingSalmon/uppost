@@ -1,8 +1,40 @@
+* {
+  margin:0;
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+header, footer {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightsalmon;
+  height:50px;
+}
+
+main {
+  
+}
+
+#login, #logout {
+  margin-right:10px;
+  background:white;
+  border-color: orange;
+  border-radius:5px;
+  color:orange;
+}
+
+#logo {
+  color:orange;
+}
+
 a {
-  color: #00B7FF;
+  text-decoration: none;
+}
+
+li {
+  list-style:none;
 }
