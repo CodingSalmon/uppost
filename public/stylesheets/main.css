@@ -1,0 +1,60 @@
+* {
+    margin:0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightsalmon;
+    height:7vh;
+}
+
+#logo {
+    margin-left:20px;
+}
+
+#login {
+    margin-right:20px;
+}
+
+button {
+    background:lightsalmon;
+    border:2.25px black solid;
+    border-radius:5px;
+}
+
+main {
+    display:grid;
+    grid-template-rows: 5vw 90vw 5vw;
+}
+
+article {
+    height:200px;
+    background:lightsalmon;
+}
+
+footer {
+    background-color: lightsalmon;
+    height:7vh;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    color:white;
+}
+
+footer > div {
+    padding-right:10px;
+}
+
+@media only screen and (min-width:768px) {
+    main {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

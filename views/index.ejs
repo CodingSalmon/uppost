@@ -1,33 +1,47 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>UpPost</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <header>
-      <a href="/categories">
-        <img src="" alt="UpPost Logo">
-      </a>
-      <a href="/categories">
-        <p>UpPost</p>
-      </a>
-      <div id="login">
-          <% if (user) { %>
-              <a id="logout" href="/logout">Log Out</a>
-              <a href="">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UpPost</title>
+        <link rel='stylesheet' href='/stylesheets/index.css' />
+    </head>
+    
+    <body>
+        <header>
+            <img id="logo" src="../public/images/" alt="UpPost Logo">
+            <div id="login">
+                <% if (user) { %>
                 <img src="" alt="Profile Img">
-              </a>
-          <% } else { %>
-              <a id="login" href="/auth/google">Login with Google</a>
-          <% } %>
-      </div>
-    </header>
-    <main>
-      
-    </main>
-    <footer>
+                <button onclick="location.href='/logout';">Log Out</button>
+                <% } else { %>
+                <button onclick="location.href='/auth/google'">Login with Google</button>
+                <% } %>
+            </div>
+        </header>
+    
+        <main>
+            <aside>
+                <h1>Welcome to UpPost</h1>
+                <p>
+                We are a social media site that serves you!
+                <br>We provide you the most relevant posts based on user feedback.
+                <br>Feel free to login here or just dive on in and start your journey!
+                </p>
+                <div>
+                <% if (user) { %>
+                    <button onclick="location.href='/main'">Continue to UpPost</button>
+                <% } else { %>
+                    <button onclick="location.href='/auth/google'">Login</button>
+                <% } %>
+                </div>
+            </aside>
+        </main>
 
-    </footer>
-  </body>
+        <footer>
+            <div>
+                UpPost &copy; 2020
+            </div>
+        </footer>
+    </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='/stylesheets/main.css' />
+        <title>All Categories</title>
+    </head>
+    <body>
+        <header>
+            <img src="../public/images/" alt="UpPost Logo">
+            <div id="login">
+                <% if (user) { %>
+                    <img src="" alt="Profile Img">
+                    <a href="/logout">Log Out</a>
+                <% } else { %>
+                    <a href="/auth/google">Login with Google</a>
+                <% } %>
+            </div>
+        </header>
+
+        <main>
+            <article>
+                <h1>Beauty</h1>
+            </article>
+            <article>
+                <h1>Technology</h1>
+            </article>
+            <article>
+                <h1>Movies</h1>
+            </article>
+            <article>
+                <h1>Learning</h1>
+            </article>
+        </main>
+
+        <footer>
+            <div>
+                UpPost &copy; 2020
+            </div>
+        </footer>
+    </body>
+</html>
