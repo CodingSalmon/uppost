@@ -29,12 +29,26 @@ button {
     border-radius:5px;
 }
 
+nav {
+    height:5vh;
+}
+
 main {
     display:grid;
-    grid-template-rows: 5vw 90vw 5vw;
+    grid-template-columns: 5vw auto 5vw;
+}
+
+.blank {
+    height:5vh;
+}
+
+#content {
+    width:90vw;
 }
 
 article {
+    border:2px black solid;
+    border-radius: 3px;
     height:200px;
     background:lightsalmon;
 }
@@ -54,7 +68,6 @@ footer > div {
 
 @media only screen and (min-width:768px) {
     main {
-        display:grid;
-        grid-template-columns: 1fr 1fr;
+        
     }
 }

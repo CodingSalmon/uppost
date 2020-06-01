@@ -9,10 +9,14 @@
     
     <body>
         <header>
-            <img id="logo" src="../public/images/" alt="UpPost Logo">
+            <a href="/categories">
+                <img id="logo" src="../public/images/" alt="UpPost Logo">
+            </a>
             <div id="login">
                 <% if (user) { %>
-                <img src="" alt="Profile Img">
+                <a href="">
+                    <img src="" alt="Profile Img">
+                </a>
                 <button onclick="location.href='/logout';">Log Out</button>
                 <% } else { %>
                 <button onclick="location.href='/auth/google'">Login with Google</button>
@@ -30,9 +34,10 @@
                 </p>
                 <div>
                 <% if (user) { %>
-                    <button onclick="location.href='/main'">Continue to UpPost</button>
+                    <button onclick="location.href='/categories'">Continue to UpPost</button>
                 <% } else { %>
                     <button onclick="location.href='/auth/google'">Login</button>
+                    <button onclick="location.href='/categories'">Continue to UpPost</button>
                 <% } %>
                 </div>
             </aside>

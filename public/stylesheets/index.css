@@ -42,11 +42,16 @@ aside {
     align-items:center;
     flex-direction: column;
     text-align:center;
-    height:80vh;
-    width:90vw;
+    height:35vh;
+    width:70vw;
+    border:3px black solid;
     border-radius:5px;
     background:lightsalmon;
     padding:5vh 0;
+}
+
+h1, p {
+    margin-bottom:5vh;
 }
 
 footer {
@@ -55,7 +60,6 @@ footer {
     display:flex;
     justify-content:flex-end;
     align-items:center;
-    color:white;
 }
 
 footer > div {

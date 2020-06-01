@@ -4,7 +4,7 @@ var passport = require('passport');
 var postsCtrl = require('../controllers/posts');
 
 /* GET users listing. */
-router.get('/', postsCtrl.main);
+router.get('/', postsCtrl.categories);
 
 router.get('/auth/google', passport.authenticate( 
   'google',

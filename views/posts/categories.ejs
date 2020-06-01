@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='/stylesheets/categories.css' />
+        <title>All Categories</title>
+    </head>
+    <body>
+        <header>
+            <% if(user) { %>
+                <a href="/categories">
+                    <img id="logo" src="../public/images/" alt="UpPost Logo">
+                </a>
+            <% } else { %>
+                <a href="/">
+                    <img id="logo" src="../public/images/" alt="UpPost Logo">
+                </a>
+            <% } %>
+
+            <div id="login">
+                <% if (user) { %>
+                <a href="">
+                    <img src="" alt="Profile Img">
+                </a>
+                <button onclick="location.href='/logout'">Log Out</button>
+                <% } else { %>
+                <button onclick="location.href='/auth/google'">Login with Google</button>
+                <% } %>
+            </div>
+        </header>
+
+        <nav>
+
+        </nav>
+
+        <main>
+            <div></div>
+            <div id="content">
+                <article>
+                    <h1>Beauty</h1>
+                </article>
+                <div class="blank"></div>
+                <article>
+                    <h1>Technology</h1>
+                </article>
+                <div class="blank"></div>
+                <article>
+                    <h1>Movies</h1>
+                </article>
+                <div class="blank"></div>
+                <article>
+                    <h1>Learning</h1>
+                </article>
+            </div>
+            <div></div>
+        </main>
+
+        <div class="blank"></div>
+
+        <footer>
+            <div>
+                UpPost &copy; 2020
+            </div>
+        </footer>
+    </body>
+</html>

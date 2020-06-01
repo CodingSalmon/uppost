@@ -8,7 +8,7 @@ var passport = require('passport');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var mainRouter = require('./routes/main');
+var categoriesRouter = require('./routes/categories');
 
 var app = express();
 require('./config/database');
@@ -32,7 +32,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/main', mainRouter);
+app.use('/categories', categoriesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

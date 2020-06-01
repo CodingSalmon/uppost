@@ -2,7 +2,7 @@ const User = require('../models/user');
 
 module.exports = {
     index,
-    main
+    categories
 };
 
 function index(req, res) {
@@ -12,8 +12,8 @@ function index(req, res) {
     });
 };
 
-function main(req, res) {
-    res.render('posts/main', {
+function categories(req, res) {
+    res.render('posts/categories', {
         user:req.user,
         name:req.query.name
     })
