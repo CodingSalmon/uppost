@@ -3,7 +3,6 @@ var router = express.Router();
 var passport = require('passport');
 var postsCtrl = require('../controllers/posts');
 
-/* GET users listing. */
 router.get('/', postsCtrl.categories);
 
 router.get('/auth/google', passport.authenticate( 

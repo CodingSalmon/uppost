@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var postCtrl = require('../controllers/posts');
 
-router.get('/', postCtrl.index);
+router.get('/', function (req, res) {
+  res.render('index.ejs', {
+      user:req.user
+  });
+});
 
 router.get('/auth/google', passport.authenticate( 
   'google',
