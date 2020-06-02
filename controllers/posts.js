@@ -2,39 +2,57 @@ const Post = require('../models/post');
 
 module.exports = {
     main,
-    category,
+    new: newPost,
     show,
     create,
-    delete: deletePost
+    delete: deletePost,
+    update
 };
 
 function main(req, res) {
-    res.render('posts/main', {
+    Post.find({}, function(err, posts){
+        res.render('posts/main', {
+            user: req.user,
+            title: req.params.title,
+            posts
+        });
+        console.log(posts)
+    });
+};
+
+function newPost(req, res) {
+    res.render('posts/new', {
         user: req.user
     });
 };
 
-function category(req, res) {
-    res.render('posts/category', {
-        user: req.user,
-        title: req.params.title
+function show(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+        res.render('posts/show', {
+            user:req.user,
+            post
+        });
     });
 };
 
-function show(req, res) {
-
-};
-
 function create(req, res) {
-    console.log(req.params);
-    req.body.category = req.params;
-    req.body.postTime = 
+    console.log(req.body);
+    req.body.likers = [];
+    req.body.postedBy = req.user.name;
 
     Post.create(req.body, function() {
-        res.redirect(`/categories/${req.category}`)
-    })
+        res.redirect('/main');
+    });
 };
 
 function deletePost(req, res) {
-    
+    Post.findByIdAndRemove(req.params.id, function() {
+        res.redirect('/main');
+    });
+};
+
+function update(req, res) {
+    Post.findByIdAndUpdate(req.params.id, function() {
+        res.redirect('/main');
+    });
 };

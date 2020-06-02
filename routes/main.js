@@ -5,9 +5,15 @@ var postsCtrl = require('../controllers/posts');
 
 router.get('/', postsCtrl.main);
 
-router.get('/:title', postsCtrl.category);
+router.get('/new', postsCtrl.new);
 
-router.post('/:title', postsCtrl.create);
+router.post('/', postsCtrl.create);
+
+router.delete('/:id', postsCtrl.delete);
+
+router.put('/', postsCtrl.update);
+
+router.get('/:id', postsCtrl.show);
 
 router.get('/auth/google', passport.authenticate( 
   'google',
@@ -17,7 +23,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/',
+    successRedirect: '/main',
     failureRedirect: '/'
   }
 ));

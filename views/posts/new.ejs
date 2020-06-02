@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='/stylesheets/category.css' />
-        <title>Beauty</title>
+        <title>Create a Post</title>
     </head>
     <body>
         <header>
@@ -30,18 +30,17 @@
             </div>
         </header>
 
-        <main>
-            
-            <% if (user) { %>
-                <form action="/categories/:category" method="POST">
-                    <input type="text">
-                    <button type="submit">Post</button>
-                </form>
-            <% } else { %>
-
-            <% } %>
-        </main>
-
+        <form action="/main" method="POST">
+            <select name="category" id="category">
+                <option value="Beauty">Beauty</option>
+                <option value="Technology">Technology</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Learning">Learning</option>
+            </select>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Type your message here"></textarea>
+            <button type="submit">Create Post</button>
+        </form>
+        
         <footer>
             <div>
                 UpPost &copy; 2020

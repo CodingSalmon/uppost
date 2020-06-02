@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel='stylesheet' href='/stylesheets/categories.css' />
-        <title>All Categories</title>
+        <link rel='stylesheet' href='/stylesheets/category.css' />
+        <title><%= title %></title>
     </head>
     <body>
         <header>
             <% if(user) { %>
-                <a href="/categories">
+                <a href="/main">
                     <img id="logo" src="../public/images/" alt="UpPost Logo">
                 </a>
             <% } else { %>
@@ -30,45 +30,30 @@
             </div>
         </header>
 
-        <nav>
-
-        </nav>
-
         <main>
-            <div></div>
-            <div id="content">
-                <article>
-                    <h1>Beauty</h1>
-                    <a href="/main/Beauty">
-                        <div class="continue">Continue to Posts</div>
-                    </a>
-                </article>
-                <div class="blank"></div>
-                <article>
-                    <h1>Technology</h1>
-                    <a href="/main/Technology">
-                        <div class="continue">Continue to Posts</div>
-                    </a>
-                </article>
-                <div class="blank"></div>
-                <article>
-                    <h1>Movies</h1>
-                    <a href="/main/Movies">
-                        <div class="continue">Continue to Posts</div>
-                    </a>
-                </article>
-                <div class="blank"></div>
-                <article>
-                    <h1>Learning</h1>
-                    <a href="/main/Learning">
-                        <div class="continue">Continue to Posts</div>
-                    </a>
-                </article>
-            </div>
-            <div></div>
-        </main>
+            
+            <% if (user) { %>
+                <form action="/main/new" method="GET">
+                    <button type="submit">Create A Post</button>
+                </form>
+            <% } else { %>
 
-        <div class="blank"></div>
+            <% } %>
+
+            <% posts.forEach(function(post) { %>
+                <article>
+                    <p>
+                    Category: <%= post.category %>    
+                    <br><%= post.message %>
+                    <br>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %>
+                    </p>
+                    <button id="up"> ^ Up This Post</button>
+                    <a href="/main/<%= post._id %>">
+                        <button>Show More</button>
+                    </a>
+                </article>
+            <% }); %>
+        </main>
 
         <footer>
             <div>
