@@ -2,3 +2,56 @@
     margin:0;
     box-sizing: border-box;
 }
+
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightsalmon;
+    height:7vh;
+}
+
+#logo {
+    margin-left:20px;
+}
+
+#login {
+    margin-left:10px;
+    margin-right:20px;
+}
+
+#login > a > img {
+    height:20px;
+}
+
+button {
+    background:lightsalmon;
+    border:2.25px black solid;
+    border-radius:5px;
+}
+
+main {
+    height:86vh;
+}
+
+footer {
+    background-color: lightsalmon;
+    height:7vh;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+
+footer > div {
+    padding-right:10px;
+}
+
+@media only screen and (min-width:768px) {
+    main {
+        
+    }
+}

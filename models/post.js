@@ -3,28 +3,23 @@ const User = require('./user');
 
 var categorySchema = new mongoose.Schema({
     title: String,
-    posts: [postSchema]
+    posts: String
 });
 
 var commentSchema = new mongoose.Schema({
     message: String,
     likers: [],
     postTime: Date,
-    postedBy: User.id
+    postedBy: String
 });
 
 var postSchema = new mongoose.Schema({
     message: String,
     likers: [],
     postTime: Date,
-    postedBy: User.id,
+    postedBy: String,
     comments:[commentSchema],
-    category: categorySchema.title
+    category: String
 });
 
-var categorySchema = new mongoose.Schema({
-    title: String,
-    posts: [postSchema]
-});
-
-module.exports = mongoose.model('Category', categorySchema);
+module.exports = mongoose.model('Post', postSchema);

@@ -1,24 +1,40 @@
-const User = require('../models/user');
+const Post = require('../models/post');
 
 module.exports = {
-    categories,
+    main,
     category,
-    create
+    show,
+    create,
+    delete: deletePost
 };
 
-function categories(req, res) {
-    res.render('posts/categories', {
-        user:req.user,
-        name:req.query.name
+function main(req, res) {
+    res.render('posts/main', {
+        user: req.user
     });
 };
 
 function category(req, res) {
-    res.render('/posts/categories/:id', {
-
+    res.render('posts/category', {
+        user: req.user,
+        title: req.params.title
     });
 };
 
-function create(req, res) {
+function show(req, res) {
 
+};
+
+function create(req, res) {
+    console.log(req.params);
+    req.body.category = req.params;
+    req.body.postTime = 
+
+    Post.create(req.body, function() {
+        res.redirect(`/categories/${req.category}`)
+    })
+};
+
+function deletePost(req, res) {
+    
 };
