@@ -9,7 +9,7 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
-var mainRouter = require('./routes/main');
+var postsRouter = require('./routes/posts');
 
 var app = express();
 require('./config/database');
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/main', mainRouter);
+app.use('/posts', postsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

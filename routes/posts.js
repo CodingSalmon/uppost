@@ -7,11 +7,13 @@ router.get('/', postsCtrl.main);
 
 router.get('/new', postsCtrl.new);
 
+router.get('/:id/edit', postsCtrl.edit);
+
 router.post('/', postsCtrl.create);
 
 router.delete('/:id', postsCtrl.delete);
 
-router.put('/', postsCtrl.update);
+router.put('/:id', postsCtrl.update);
 
 router.get('/:id', postsCtrl.show);
 

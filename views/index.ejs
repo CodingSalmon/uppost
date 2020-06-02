@@ -3,19 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>UpPost</title>
         <link rel='stylesheet' href='/stylesheets/index.css' />
+        <title>UpPost</title>
     </head>
     
     <body>
         <header>
-            <a href="/categories">
-                <img id="logo" src="../public/images/" alt="UpPost Logo">
+            <a href="/posts">
+                <img id="logo" src="/images/profPic.png" alt="UpPost Logo">
             </a>
+
             <div id="login">
                 <% if (user) { %>
                     <a href="">
-                        <img src="https://imgur.com/gallery/q1OwqeP" alt="Profile Img">
+                        <img src="images/profPic.png" alt="Profile Img">
                     </a>
                     <button onclick="location.href='/logout'">Log Out</button>
                 <% } else { %>
@@ -34,10 +35,10 @@
                 </p>
                 <div>
                 <% if (user) { %>
-                    <button onclick="location.href='/main'">Continue to UpPost</button>
+                    <button onclick="location.href='/posts'">Continue to UpPost</button>
                 <% } else { %>
                     <button onclick="location.href='/auth/google'">Login</button>
-                    <button onclick="location.href='/main'">Continue to UpPost</button>
+                    <button onclick="location.href='/posts'">Continue to UpPost</button>
                 <% } %>
                 </div>
             </aside>

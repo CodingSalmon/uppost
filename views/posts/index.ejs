@@ -3,25 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel='stylesheet' href='/stylesheets/category.css' />
-        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/main.css' />
+        <title>UpPost</title>
     </head>
     <body>
         <header>
-            <% if(user) { %>
-                <a href="/main">
-                    <img id="logo" src="../public/images/" alt="UpPost Logo">
-                </a>
-            <% } else { %>
-                <a href="/">
-                    <img id="logo" src="../public/images/" alt="UpPost Logo">
-                </a>
-            <% } %>
+            <a href="/posts">
+                <img id="logo" src="/images/profPic.png" alt="UpPost Logo">
+            </a>
 
             <div id="login">
                 <% if (user) { %>
                 <a href="">
-                    <img src="../../public/images/profPic.png" alt="Profile Img">
+                    <img src="/images/profPic.png" alt="Profile Img">
                 </a>
                 <button onclick="location.href='/logout'">Log Out</button>
                 <% } else { %>
@@ -33,7 +27,7 @@
         <main>
             
             <% if (user) { %>
-                <form action="/main/new" method="GET">
+                <form action="/posts/new" method="GET">
                     <button type="submit">Create A Post</button>
                 </form>
             <% } else { %>
@@ -48,7 +42,7 @@
                     <br>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %>
                     </p>
                     <button id="up"> ^ Up This Post</button>
-                    <a href="/main/<%= post._id %>">
+                    <a href="/posts/<%= post._id %>">
                         <button>Show More</button>
                     </a>
                 </article>

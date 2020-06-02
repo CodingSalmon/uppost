@@ -3,24 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= post.category %> Post By <%= post.postedBy %></title>
+        <link rel="stylesheet" href="/stylesheets/show.css">
+        <title>UpPost - A <%= post.category %> Post By <%= post.postedBy %></title>
     </head>
     <body>
         <header>
-            <% if(user) { %>
-                <a href="/main">
-                    <img id="logo" src="../public/images/" alt="UpPost Logo">
-                </a>
-            <% } else { %>
-                <a href="/">
-                    <img id="logo" src="../public/images/" alt="UpPost Logo">
-                </a>
-            <% } %>
+            <a href="/posts">
+                <img id="logo" src="/images/" alt="UpPost Logo">
+            </a>
 
             <div id="login">
                 <% if (user) { %>
                 <a href="">
-                    <img src="../../public/images/profPic.png" alt="Profile Img">
+                    <img src="/images/profPic.png" alt="Profile Img">
                 </a>
                 <button onclick="location.href='/logout'">Log Out</button>
                 <% } else { %>
@@ -34,10 +29,10 @@
             <p><%= post.message %></p>
             <p>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %></p>
             <% if(user === post.postedBy) %>
-                <form action="/main/<%= post.id %>/edit" method="GET">
+                <form action="/posts/<%= post.id %>/edit" method="GET">
                     <button>Edit Post</button>
                 </form>
-                <form action="/main/<%= post.id %>?_method=DELETE" method="POST">
+                <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
                     <button>Delete Post</button>
                 </form>
         </article>

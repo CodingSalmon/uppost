@@ -6,17 +6,17 @@ module.exports = {
     show,
     create,
     delete: deletePost,
+    edit,
     update
 };
 
 function main(req, res) {
     Post.find({}, function(err, posts){
-        res.render('posts/main', {
+        res.render('posts/index', {
             user: req.user,
             title: req.params.title,
             posts
         });
-        console.log(posts)
     });
 };
 
@@ -36,7 +36,6 @@ function show(req, res) {
 };
 
 function create(req, res) {
-    console.log(req.body);
     req.body.likers = [];
     req.body.postedBy = req.user.name;
 
@@ -51,8 +50,17 @@ function deletePost(req, res) {
     });
 };
 
+function edit(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+        res.render('posts/edit', {
+            user:req.user,
+            post
+        });
+    });
+};
+
 function update(req, res) {
-    Post.findByIdAndUpdate(req.params.id, function() {
-        res.redirect('/main');
+    Post.findByIdAndUpdate(req.params.id, req.body, function(err, post) {
+        res.redirect(`/main/${post.id}`);
     });
 };
