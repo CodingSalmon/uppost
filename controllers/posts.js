@@ -1,7 +1,7 @@
 const Post = require('../models/post');
 
 module.exports = {
-    main,
+    index,
     new: newPost,
     show,
     create,
@@ -10,7 +10,7 @@ module.exports = {
     update
 };
 
-function main(req, res) {
+function index(req, res) {
     Post.find({}, function(err, posts){
         res.render('posts/index', {
             user: req.user,

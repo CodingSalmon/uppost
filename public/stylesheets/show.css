@@ -24,10 +24,11 @@ header {
 #login {
     margin-left:10px;
     margin-right:20px;
+    height:4vh;
 }
 
-#login > a > img {
-    height:40px;
+#login > a{
+    height:4vh;
 }
 
 a {

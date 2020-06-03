@@ -15,7 +15,7 @@
             <div id="login">
                 <% if (user) { %>
                 <a href="/profile">
-                    <img src="/images/profPic.png" alt="Profile Img">
+                    <img src="/images/uppostLogo.png" alt="Profile Img">
                 </a>
                 <button onclick="location.href='/logout'">Log Out</button>
                 <% } else { %>
@@ -28,13 +28,15 @@
             <h1>Category <%= post.category %></h1>
             <p><%= post.message %></p>
             <p>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %></p>
-            <% if(user === post.postedBy) %>
-                <form action="/posts/<%= post.id %>/edit" method="GET">
-                    <button>Edit Post</button>
-                </form>
-                <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
-                    <button>Delete Post</button>
-                </form>
+            <% if (user !== undefined) {%>
+                <% if(user.name === post.postedBy) {%>
+                    <form action="/posts/<%= post.id %>/edit" method="GET">
+                        <button>Edit Post</button>
+                    </form>
+                    <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+                        <button>Delete Post</button>
+                    </form>
+            <% }} %>
         </article>
 
         <footer>

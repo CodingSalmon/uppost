@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var postsCtrl = require('../controllers/posts');
 
-router.get('/', postsCtrl.main);
+router.get('/', postsCtrl.index);
 
 router.get('/new', postsCtrl.new);
 
