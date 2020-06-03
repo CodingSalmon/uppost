@@ -22,33 +22,37 @@ header {
 }
 
 #login {
+    margin-left:10px;
     margin-right:20px;
+}
+
+#login > a > img {
+    height:4vh;
+}
+
+a {
+    text-decoration: none;
 }
 
 button {
     background:lightsalmon;
-    border:2.25px black solid;
+    border:2px black solid;
     border-radius:5px;
-    cursor:pointer;
 }
 
 main {
     display:flex;
-    align-items:center;
     justify-content:center;
-    background:white;
-    height:86vh;
+    text-align:center;
 }
 
 aside {
-    display:grid;
-    align-items:center;
-    text-align:center;
-    height:45vh;
-    width:70vw;
-    border:3px black solid;
-    border-radius:5px;
+    margin:5vh 0;
+    width:90vw;
+    height:400px;
     background:lightsalmon;
+    border:2px black solid;
+    border-radius:10px;
 }
 
 footer {
@@ -64,6 +68,8 @@ footer > div {
     padding-right:10px;
 }
 
-@media only screen and (min-width: 768px) {
-
+@media only screen and (min-width:768px) {
+    main {
+        
+    }
 }

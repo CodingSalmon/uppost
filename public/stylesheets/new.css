@@ -30,6 +30,10 @@ header {
     height:40px;
 }
 
+a {
+    text-decoration: none;
+}
+
 button {
     background:lightsalmon;
     border:2px black solid;
@@ -40,12 +44,21 @@ main {
     height:86vh;
 }
 
+h1 {
+    margin-left:20px;
+}
+
+form {
+    
+}
+
 footer {
     background-color: lightsalmon;
     height:7vh;
     display:flex;
     justify-content:flex-end;
     align-items:center;
+    border-top:1px black solid;
 }
 
 footer > div {

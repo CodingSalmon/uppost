@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel='stylesheet' href='/stylesheets/main.css' />
+        <link rel='stylesheet' href='/stylesheets/posts.css' />
         <title>UpPost</title>
     </head>
     <body>
@@ -14,7 +14,7 @@
 
             <div id="login">
                 <% if (user) { %>
-                <a href="">
+                <a href="/profile">
                     <img src="/images/profPic.png" alt="Profile Img">
                 </a>
                 <button onclick="location.href='/logout'">Log Out</button>
@@ -25,6 +25,8 @@
         </header>
 
         <main>
+
+            <a href="/">Home Page</a>
             
             <% if (user) { %>
                 <form action="/posts/new" method="GET">
@@ -37,11 +39,11 @@
             <% posts.forEach(function(post) { %>
                 <article>
                     <p>
-                    Category: <%= post.category %>    
-                    <br><%= post.message %>
-                    <br>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %>
+                        Category: <%= post.category %>
+                        <br><br><strong><%= post.message %></strong>
+                        <br><br>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %>
                     </p>
-                    <button id="up"> ^ Up This Post</button>
+                    <%= post.likers %><button id="up"> ^ Up This Post</button>
                     <a href="/posts/<%= post._id %>">
                         <button>Show More</button>
                     </a>

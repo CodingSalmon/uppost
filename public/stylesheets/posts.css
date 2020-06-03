@@ -22,33 +22,48 @@ header {
 }
 
 #login {
+    margin-left:10px;
     margin-right:20px;
+}
+
+#login > a > img {
+    height:40px;
+}
+
+a {
+    text-decoration: none;
 }
 
 button {
     background:lightsalmon;
-    border:2.25px black solid;
+    border:2px black solid;
     border-radius:5px;
-    cursor:pointer;
 }
 
 main {
     display:flex;
+    flex-direction:column;
     align-items:center;
-    justify-content:center;
-    background:white;
-    height:86vh;
 }
 
-aside {
-    display:grid;
-    align-items:center;
-    text-align:center;
-    height:45vh;
-    width:70vw;
-    border:3px black solid;
-    border-radius:5px;
+main > form {
+    margin:2vh 0;
+}
+
+article {
+    padding:2vh 2vw;
+    width:90vw;
     background:lightsalmon;
+    border-radius:4px;
+    border:2px black solid;
+    margin-bottom:2vh;
+}
+
+p > span {
+}
+
+.liked {
+    background:lightblue;
 }
 
 footer {
@@ -64,6 +79,8 @@ footer > div {
     padding-right:10px;
 }
 
-@media only screen and (min-width: 768px) {
-
+@media only screen and (min-width:768px) {
+    main {
+        
+    }
 }

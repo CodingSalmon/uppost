@@ -3,8 +3,60 @@
     box-sizing: border-box;
 }
 
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightsalmon;
+    height:7vh;
+    border-bottom:1px black solid;
+}
+
 #logo {
     margin-left:20px;
     height:4vh;
 }
 
+#login {
+    margin-left:10px;
+    margin-right:20px;
+}
+
+#login > a > img {
+    height:40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background:lightsalmon;
+    border:2px black solid;
+    border-radius:5px;
+}
+
+
+
+footer {
+    background-color: lightsalmon;
+    height:7vh;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    border-top:1px black solid;
+}
+
+footer > div {
+    padding-right:10px;
+}
+
+@media only screen and (min-width:768px) {
+    main {
+        
+    }
+}

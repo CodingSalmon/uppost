@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= req.user %></title>
+        <link rel="stylesheet" href="/stylesheets/profile.css">
+        <title><%= user.name %></title>
     </head>
     <body>
         <header>
@@ -13,8 +14,8 @@
 
             <div id="login">
                 <% if (user) { %>
-                <a href="">
-                    <img src="../../public/images/profPic.png" alt="Profile Img">
+                <a href="/profile">
+                    <img src="/images/uppostLogo.png" alt="Profile Img">
                 </a>
                 <button onclick="location.href='/logout'">Log Out</button>
                 <% } else { %>
@@ -24,7 +25,11 @@
         </header>
 
         <main>
-            <h1><%= user.name %></h1>
+            <aside>
+                <img src="" alt="Profile Pic">
+                <h1><%= user.name %></h1>
+                <p>Email: <%= user.email %></p>
+            </aside>
         </main>
         
         <footer>

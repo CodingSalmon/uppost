@@ -40,13 +40,13 @@ function create(req, res) {
     req.body.postedBy = req.user.name;
 
     Post.create(req.body, function() {
-        res.redirect('/main');
+        res.redirect('/posts');
     });
 };
 
 function deletePost(req, res) {
     Post.findByIdAndRemove(req.params.id, function() {
-        res.redirect('/main');
+        res.redirect('/posts');
     });
 };
 
@@ -61,6 +61,6 @@ function edit(req, res) {
 
 function update(req, res) {
     Post.findByIdAndUpdate(req.params.id, req.body, function(err, post) {
-        res.redirect(`/main/${post.id}`);
+        res.redirect(`/posts/${post.id}`);
     });
 };
