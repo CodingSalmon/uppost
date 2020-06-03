@@ -3,3 +3,8 @@
     box-sizing: border-box;
 }
 
+#logo {
+    margin-left:20px;
+    height:4vh;
+}
+

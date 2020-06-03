@@ -2,9 +2,9 @@
 
 ## Screenshots
 
-![Main Page]()
+![Posts Page]()
 
-![Post Page]()
+![Show Page]()
 
 ## Technologies Used
 

@@ -13,11 +13,12 @@ header {
     align-items: center;
     background-color: lightsalmon;
     height:7vh;
+    border-bottom:1px black solid;
 }
 
 #logo {
     margin-left:20px;
-    height:20px;
+    height:4vh;
 }
 
 #login {
@@ -31,7 +32,7 @@ header {
 
 button {
     background:lightsalmon;
-    border:2.25px black solid;
+    border:2px black solid;
     border-radius:5px;
 }
 
