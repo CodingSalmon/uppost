@@ -12,7 +12,7 @@ module.exports = {
 };
 
 function index(req, res) {
-    Post.find({}, function(err, posts){
+    Post.find({}).sort({likers:-1}).exec(function(err, posts){
         res.render('posts/index', {
             user: req.user,
             title: req.params.title,
@@ -72,6 +72,8 @@ function like(req, res) {
             post.likers.splice(idx,1);
         }
         else post.likers.push(req.user.id);
-        res.redirect('/posts');
+        post.save(function() {
+            res.redirect('/posts');
+        })
     });
 };
