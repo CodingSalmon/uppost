@@ -9,6 +9,8 @@ router.get('/new', isLoggedIn, postsCtrl.new);
 
 router.get('/:id/edit', isLoggedIn, postsCtrl.edit);
 
+router.get('/:id/like', isLoggedIn, postsCtrl.like);
+
 router.post('/', isLoggedIn, postsCtrl.create);
 
 router.delete('/:id', isLoggedIn, postsCtrl.delete);

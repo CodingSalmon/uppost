@@ -41,6 +41,10 @@ button {
     border-radius:5px;
 }
 
+button > img {
+    height:15px;
+}
+
 main {
     display:flex;
     flex-direction:column;
@@ -64,7 +68,12 @@ article {
     margin-bottom:2vh;
 }
 
-p > span {
+article > form {
+    display:inline-block;
+}
+
+article > a {
+    float:right;
 }
 
 .liked {

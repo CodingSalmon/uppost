@@ -7,7 +7,8 @@ module.exports = {
     create,
     delete: deletePost,
     edit,
-    update
+    update,
+    like
 };
 
 function index(req, res) {
@@ -36,7 +37,6 @@ function show(req, res) {
 };
 
 function create(req, res) {
-    req.body.likers = [req.user.id];
     req.body.postedBy = req.user.name;
 
     Post.create(req.body, function() {
@@ -62,5 +62,16 @@ function edit(req, res) {
 function update(req, res) {
     Post.findByIdAndUpdate(req.params.id, req.body, function(err, post) {
         res.redirect(`/posts/${post.id}`);
+    });
+};
+
+function like(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+        if(post.likers.includes(req.user.id)) {
+            let idx = post.likers.indexOf(`${req.user.id}`);
+            post.likers.splice(idx,1);
+        }
+        else post.likers.push(req.user.id);
+        res.redirect('/posts');
     });
 };

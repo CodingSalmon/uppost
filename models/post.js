@@ -10,6 +10,7 @@ var postSchema = new mongoose.Schema({
     message: String,
     comments:[commentSchema],
     postedBy: String,
+    likers: [String],
     postTime: {
         type: Date,
         default: function(){

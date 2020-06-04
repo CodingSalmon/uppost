@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='/stylesheets/posts.css' />
-        <script defer src="/javascript/like"></script>
         <title>UpPost</title>
     </head>
     <body>
@@ -45,8 +44,11 @@
                         <br><br>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %>
                     </p>
                     <% if(user) { %>
-                        <% if(!!post.likers && post.likers.includes(user.id)) { %>
-                            <%= post.likers.length %><button id="up"><img src="/images/upvote.png" alt="Upvote Button"></button>Upvote This Post
+                        <% if(post.likers) { %>
+                            <%= post.likers.length %> Upvotes
+                            <form action="/posts/<%= post._id %>/like" method="GET">
+                                <button id="up"><img src="/images/upvote.png" alt="Upvote Button"></button> Upvote
+                            </form>
                         <% } %>
                     <% } %>
                     <a href="/posts/<%= post._id %>">
