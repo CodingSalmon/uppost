@@ -16,7 +16,7 @@
             <div id="login">
                 <% if (user) { %>
                     <a href="/profile">
-                        <img src="images/profPic.png" alt="Profile Img">
+                        <img src="<%= user.avatar %>" alt="Profile Img">
                     </a>
                     <button onclick="location.href='/logout'">Log Out</button>
                 <% } else { %>

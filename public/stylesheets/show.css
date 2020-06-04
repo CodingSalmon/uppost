@@ -27,8 +27,9 @@ header {
     height:4vh;
 }
 
-#login > a{
+#login > a > img{
     height:4vh;
+    border-radius:50%;
 }
 
 a {
@@ -41,7 +42,19 @@ button {
     border-radius:5px;
 }
 
+main {
+    height:86vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
+article {
+    height:70vh;
+    width:90vw;
+    background:lightsalmon;
+    border-radius:5px;
+}
 
 footer {
     background-color: lightsalmon;

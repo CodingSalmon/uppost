@@ -5,15 +5,15 @@ var postsCtrl = require('../controllers/posts');
 
 router.get('/', postsCtrl.index);
 
-router.get('/new', postsCtrl.new);
+router.get('/new', isLoggedIn, postsCtrl.new);
 
-router.get('/:id/edit', postsCtrl.edit);
+router.get('/:id/edit', isLoggedIn, postsCtrl.edit);
 
-router.post('/', postsCtrl.create);
+router.post('/', isLoggedIn, postsCtrl.create);
 
-router.delete('/:id', postsCtrl.delete);
+router.delete('/:id', isLoggedIn, postsCtrl.delete);
 
-router.put('/:id', postsCtrl.update);
+router.put('/:id', isLoggedIn, postsCtrl.update);
 
 router.get('/:id', postsCtrl.show);
 
@@ -34,5 +34,10 @@ router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
 });
+
+function isLoggedIn(req, res, next) {
+  if(req.isAuthenticated()) return next();
+  res.redirect('/');
+};
 
 module.exports = router;

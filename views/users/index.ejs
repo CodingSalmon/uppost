@@ -4,18 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/stylesheets/profile.css">
-        <title><%= user.name %></title>
+        <title>User: <%= user.name %></title>
     </head>
     <body>
         <header>
-            <a href="/categories">
+            <a href="/posts">
                 <img id="logo" src="/images/uppostLogo.png" alt="UpPost Logo">
             </a>
 
             <div id="login">
                 <% if (user) { %>
                 <a href="/profile">
-                    <img src="/images/uppostLogo.png" alt="Profile Img">
+                    <img src="<%= user.avatar %>" alt="Profile Img">
                 </a>
                 <button onclick="location.href='/logout'">Log Out</button>
                 <% } else { %>
@@ -26,9 +26,9 @@
 
         <main>
             <aside>
-                <img src="" alt="Profile Pic">
-                <h1><%= user.name %></h1>
-                <p>Email: <%= user.email %></p>
+                <img src="<%= user.avatar %>" alt="Profile Pic">
+                <br><h1><%= user.name %></h1>
+                <br><p>Email: <%= user.email %></p>
             </aside>
         </main>
         

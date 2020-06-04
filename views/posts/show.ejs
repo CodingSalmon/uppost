@@ -15,7 +15,7 @@
             <div id="login">
                 <% if (user) { %>
                 <a href="/profile">
-                    <img src="/images/uppostLogo.png" alt="Profile Img">
+                    <img src="<%= user.avatar %>" alt="Profile Img">
                 </a>
                 <button onclick="location.href='/logout'">Log Out</button>
                 <% } else { %>
@@ -24,20 +24,22 @@
             </div>
         </header>
 
-        <article>
-            <h1>Category <%= post.category %></h1>
-            <p><%= post.message %></p>
-            <p>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %></p>
-            <% if (user !== undefined) {%>
-                <% if(user.name === post.postedBy) {%>
-                    <form action="/posts/<%= post.id %>/edit" method="GET">
-                        <button>Edit Post</button>
-                    </form>
-                    <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
-                        <button>Delete Post</button>
-                    </form>
-            <% }} %>
-        </article>
+        <main>
+            <article>
+                <h1>Category <%= post.category %></h1>
+                <br><p><%= post.message %></p>
+                <br><p>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %></p>
+                <br><% if (user !== undefined) {%>
+                    <% if(user.name === post.postedBy) {%>
+                        <form action="/posts/<%= post.id %>/edit" method="GET">
+                            <button>Edit Post</button>
+                        </form>
+                        <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+                            <button>Delete Post</button>
+                        </form>
+                <% }} %>
+            </article>
+        </main>
 
         <footer>
             <div>

@@ -10,7 +10,7 @@ body {
 header {
     display:flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:center;
     background-color: lightsalmon;
     height:7vh;
     border-bottom:1px black solid;
@@ -22,12 +22,14 @@ header {
 }
 
 #login {
-    margin-left:10px;
     margin-right:20px;
+    height:4vh;
 }
 
-#login > a > img {
+#login > a > img{
     height:4vh;
+    margin-right:10px;
+    border-radius:50%;
 }
 
 a {
@@ -40,19 +42,30 @@ button {
     border-radius:5px;
 }
 
+button:hover {
+    background: rgba(0,0,0,.2);
+}
+
 main {
     display:flex;
     justify-content:center;
     text-align:center;
+    height:86vh;
 }
 
 aside {
     margin:5vh 0;
     width:90vw;
-    height:400px;
+    height:76vh;
     background:lightsalmon;
     border:2px black solid;
     border-radius:10px;
+}
+
+aside > img {
+    height:40vh;
+    border-radius:50%;
+    margin-bottom:20px;
 }
 
 footer {

@@ -23,6 +23,16 @@ header {
 
 #login {
     margin-right:20px;
+    height:4vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+#login > a > img {
+    height:4vh;
+    border-radius:50%;
 }
 
 button {

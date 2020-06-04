@@ -36,7 +36,7 @@ function show(req, res) {
 };
 
 function create(req, res) {
-    req.body.likers = [];
+    req.body.likers = [req.user.id];
     req.body.postedBy = req.user.name;
 
     Post.create(req.body, function() {
