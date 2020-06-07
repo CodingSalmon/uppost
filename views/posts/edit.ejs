@@ -3,19 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel='stylesheet' href='/stylesheets/category.css' />
+        <link rel='stylesheet' href='/stylesheets/edit.css' />
+        <link rel="icon" href="/images/favicon.png">
         <title>Create a Post</title>
     </head>
     <body>
         <header>
             <a href="/main">
-                <img id="logo" src="/images/" alt="UpPost Logo">
+                <img id="logo" src="/images/uppostLogo.png" alt="UpPost Logo">
             </a>
 
             <div id="login">
                 <% if (user) { %>
                 <a href="/profile">
-                    <img src="/images/profPic.png" alt="Profile Img">
+                    <img src=<%= user.avatar %> alt="Profile Img">
                 </a>
                 <button onclick="location.href='/logout'">Log Out</button>
                 <% } else { %>
@@ -24,16 +25,20 @@
             </div>
         </header>
 
-        <form action="/posts/<%= post.id %>?_method=PUT" method="POST">
-            <select name="category" id="category">
-                <option value="Beauty">Beauty</option>
-                <option value="Technology">Technology</option>
-                <option value="Beauty">Beauty</option>
-                <option value="Learning">Learning</option>
-            </select>
-            <textarea name="message" id="message" cols="30" rows="10"><%= post.message %></textarea>
-            <button type="submit">Update Post</button>
-        </form>
+        <main>
+            <a href="/posts">Main Page</a>
+            <form action="/posts/<%= post.id %>?_method=PUT" method="POST">
+                <h1>Edit Post</h1>
+                <br><textarea name="message" id="message" cols="30" rows="10"><%= post.message %></textarea>
+                <select name="category" id="category">
+                    <option value="Beauty">Beauty</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Learning">Learning</option>
+                </select>
+                <button type="submit">Update Post</button>
+            </form>
+        </main>
         
         <footer>
             <div>

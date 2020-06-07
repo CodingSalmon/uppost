@@ -11,7 +11,7 @@ header {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    background-color: lightsalmon;
+    background-color: #7be699;
     height:7vh;
     border-bottom:1px black solid;
 }
@@ -22,14 +22,15 @@ header {
 }
 
 #login {
-    margin-left:10px;
+    display:flex;
+    align-items:center;
     margin-right:20px;
-    height:4vh;
 }
 
-#login > a > img{
+#login > a > img {
     height:4vh;
     border-radius:50%;
+    margin-right:10px;
 }
 
 a {
@@ -37,35 +38,57 @@ a {
 }
 
 button {
-    background:lightsalmon;
+    background:#55ff85;
     border:2px black solid;
     border-radius:5px;
+    cursor: pointer;
 }
 
 main {
     height:86vh;
     display:flex;
-    justify-content:center;
+    flex-direction:column;
     align-items:center;
+}
+
+main > a {
+    margin:10px 0;
 }
 
 article {
     padding: 5vh 5vh;
-    display:flex;
-    flex-direction:column;
+    display:grid;
+    grid-template-areas: 
+    "h1 h1"
+    "msg msg"
+    "pT pT"
+    "form form"
+    ;
     height:70vh;
     width:90vw;
-    background:lightsalmon;
+    background:#7be699;
     border-radius:5px;
-}
-
-form {
-    display:inline-block;
     border:2px black solid;
 }
 
+h1 {
+    grid-area: 'h1';
+}
+
+#msg {
+    grid-area: 'msg';
+}
+
+#postTime {
+    grid-area: 'pT';
+}
+
+form {
+    grid-area: 'form';
+}
+
 footer {
-    background-color: lightsalmon;
+    background-color: #7be699;
     height:7vh;
     display:flex;
     justify-content:flex-end;

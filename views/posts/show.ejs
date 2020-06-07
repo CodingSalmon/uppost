@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/stylesheets/show.css">
-        <title>UpPost - A <%= post.category %> Post By <%= post.postedBy %></title>
+        <link rel="icon" href="/images/favicon.png">
+        <title>A <%= post.category %> Post By <%= post.postedBy %></title>
     </head>
     <body>
         <header>
@@ -25,16 +26,17 @@
         </header>
 
         <main>
+            <a href="/posts">Main Page</a>
             <article>
-                <h1>Category <%= post.category %></h1>
-                <br><p><%= post.message %></p>
-                <br><p>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %></p>
+                <h1>Category: <%= post.category %></h1>
+                <br><p id="msg"><%= post.message %></p>
+                <br><p id="postTime">Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %></p>
                 <br><% if (user !== undefined) {%>
                     <% if(user.name === post.postedBy) {%>
                         <form action="/posts/<%= post.id %>/edit" method="GET">
                             <button>Edit Post</button>
                         </form>
-                        <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+                        <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" id="delete">
                             <button>Delete Post</button>
                         </form>
                 <% }} %>

@@ -11,7 +11,7 @@ header {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    background-color: lightsalmon;
+    background-color: #7be699;
     height:7vh;
     border-bottom:1px black solid;
 }
@@ -22,21 +22,23 @@ header {
 }
 
 #login {
+    display:flex;
+    align-items:center;
     margin-right:20px;
+}
+
+#login > a > img {
     height:4vh;
+    border-radius:50%;
+    margin-right:10px;
 }
 
 a {
     text-decoration: none;
 }
 
-#login > a > img {
-    height:4vh;
-    border-radius:50%;
-}
-
 button {
-    background:lightsalmon;
+    background:#55ff85;
     border:2.25px black solid;
     border-radius:5px;
     cursor:pointer;
@@ -46,7 +48,6 @@ main {
     display:flex;
     align-items:center;
     justify-content:center;
-    background:white;
     height:86vh;
 }
 
@@ -58,11 +59,11 @@ aside {
     width:70vw;
     border:3px black solid;
     border-radius:5px;
-    background:lightsalmon;
+    background:#7be699;
 }
 
 footer {
-    background-color: lightsalmon;
+    background-color: #7be699;
     height:7vh;
     display:flex;
     justify-content:flex-end;

@@ -11,7 +11,7 @@ header {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    background-color: lightsalmon;
+    background-color: #7be699;
     height:7vh;
     border-bottom:1px black solid;
 }
@@ -22,13 +22,15 @@ header {
 }
 
 #login {
-    margin-left:10px;
+    display:flex;
+    align-items:center;
     margin-right:20px;
 }
 
 #login > a > img {
     height:4vh;
     border-radius:50%;
+    margin-right:10px;
 }
 
 a {
@@ -36,9 +38,13 @@ a {
 }
 
 button {
-    background:lightsalmon;
+    background:#55ff85;
     border:2px black solid;
     border-radius:5px;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 button > img {
@@ -52,7 +58,7 @@ main {
 }
 
 main > a {
-    margin-top:10px;
+    margin:10px 0;
 }
 
 main > form {
@@ -62,7 +68,7 @@ main > form {
 article {
     padding:2vh 2vw;
     width:90vw;
-    background:lightsalmon;
+    background:#7be699;
     border-radius:4px;
     border:2px black solid;
     margin-bottom:2vh;
@@ -81,7 +87,7 @@ article > a {
 }
 
 footer {
-    background-color: lightsalmon;
+    background-color: #7be699;
     height:7vh;
     display:flex;
     justify-content:flex-end;

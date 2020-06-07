@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='/stylesheets/new.css' />
+        <link rel="icon" href="/images/favicon.png">
         <title>Create a Post</title>
     </head>
     <body>
@@ -24,9 +25,10 @@
             </div>
         </header>
         <main>
-            <h1>Create a New Post</h1>
+            <a href="/posts">Main Page</a>
             <form action="/posts" method="POST">
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Type your message here"></textarea>
+                <h1>Create a New Post</h1>
+                <br><textarea name="message" id="message" cols="30" rows="10" placeholder="Type your message here"></textarea>
                 <select name="category" id="category">
                     <option value="Beauty">Beauty</option>
                     <option value="Technology">Technology</option>

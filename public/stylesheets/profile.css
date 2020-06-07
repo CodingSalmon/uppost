@@ -11,7 +11,7 @@ header {
     display:flex;
     justify-content: space-between;
     align-items:center;
-    background-color: lightsalmon;
+    background-color: #7be699;
     height:7vh;
     border-bottom:1px black solid;
 }
@@ -22,14 +22,15 @@ header {
 }
 
 #login {
+    display:flex;
+    align-items:center;
     margin-right:20px;
-    height:4vh;
 }
 
-#login > a > img{
+#login > a > img {
     height:4vh;
-    margin-right:10px;
     border-radius:50%;
+    margin-right:10px;
 }
 
 a {
@@ -37,7 +38,7 @@ a {
 }
 
 button {
-    background:lightsalmon;
+    background:#55ff85;
     border:2px black solid;
     border-radius:5px;
 }
@@ -55,9 +56,10 @@ main {
 
 aside {
     margin:5vh 0;
+    padding:3vh 0;
     width:90vw;
     height:76vh;
-    background:lightsalmon;
+    background:#7be699;
     border:2px black solid;
     border-radius:10px;
 }
@@ -69,7 +71,7 @@ aside > img {
 }
 
 footer {
-    background-color: lightsalmon;
+    background-color: #7be699;
     height:7vh;
     display:flex;
     justify-content:flex-end;

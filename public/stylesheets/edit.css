@@ -61,13 +61,14 @@ form {
     border: 2px black solid;
     border-radius:5px;
     padding: 4vh 4vw;
-    margin:2vw 0;
+    margin: 2vh 0;
     width:90vw;
     height:76vh;
 }
 
 textarea {
     width:81.4vw;
+    font:14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 select {
