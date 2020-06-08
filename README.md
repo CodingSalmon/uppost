@@ -2,9 +2,9 @@
 
 ## Screenshots
 
-![Posts Page](public/images/posts.jpg)
+![Posts Page](public/images/posts.png)
 
-![Show Page](public/images/show.jpg)
+![Show Page](public/images/show.png)
 
 ## Technologies Used
 
