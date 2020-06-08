@@ -26,3 +26,4 @@
 
 1. Ability to filter shown posts by category.
 2. Ability to see all of your posts on the profile page.
+3. Add more responsive design.

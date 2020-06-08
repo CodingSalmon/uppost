@@ -93,7 +93,11 @@ footer > div {
 }
 
 @media only screen and (min-width:768px) {
-    main {
-        
+    form {
+        width:55vw;
+    }
+
+    textarea {
+        width:46.6vw;
     }
 }

@@ -52,17 +52,20 @@ button > img {
 }
 
 main {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    display:grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    justify-items: center;
 }
 
 main > a {
     margin:10px 0;
+    grid-area:'link';
 }
 
 main > form {
     margin:2vh 0;
+    grid-area: '';
 }
 
 article {
@@ -100,7 +103,7 @@ footer > div {
 }
 
 @media only screen and (min-width:768px) {
-    main {
-        
+    article {
+        width:40vw;
     }
 }
