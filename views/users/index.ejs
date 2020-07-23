@@ -31,6 +31,37 @@
                 <br><h1><%= user.name %></h1>
                 <br><p>Email: <%= user.email %></p>
             </aside>
+
+            <section>
+                <% posts.forEach(function(post) { %>
+                    <article>
+                        <p>
+                            Category: <%= post.category %>
+                            <br><br><strong><%= post.message %></strong>
+                            <br><br>Posted at <%= post.postTime.toLocaleTimeString() %> on <%= post.postTime.toLocaleDateString() %> by <%= post.postedBy %>
+                        </p>
+                        <% if(post.likers.length !== 1) { %>
+                            <%= post.likers.length %> Upvotes
+                        <% } else { %>
+                            <%= post.likers.length %> Upvote
+                        <% } %>
+                        <% if(user) { %>
+                            <form action="/posts/<%= post._id %>/like" method="GET">
+                                <% if(post.likers.includes(user.id)) { %>
+                                    <button id="up"><img src="/images/downvote.png" alt="Upvote Button"></button> 
+                                        Downvote
+                                    <% } else { %>
+                                        <button id="up"><img src="/images/upvote.png" alt="Upvote Button"></button> 
+                                        Upvote
+                                <% } %>
+                            </form>
+                        <% } %>
+                        <a href="/posts/<%= post._id %>">
+                            <button>Show More</button>
+                        </a>
+                    </article>
+                <% }); %>
+            </section>
         </main>
         
         <footer>
